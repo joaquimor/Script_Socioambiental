@@ -10,11 +10,11 @@ import processing
 
 # Criar projeto
 projeto = QgsProject.instance()
-projeto.write('C:/Users/joaquim.ornellas/Downloads/Projeto_Fluxo_BBA.qgs')
+projeto.write('Caminho/do/Projeto') #Mudar para caminho do projeto
 print(projeto.fileName())
 
 # Ler o projeto
-projeto.read('C:/Users/joaquim.ornellas/Downloads/Projeto_Fluxo_BBA.qgs')
+projeto.read('Caminho/do/Projeto') #Mudar para caminho do projeto
 
 # Solicita ao usuário que insira os caminhos dos arquivos shapefile (um por vez)
 caminhos_shapefiles = []
@@ -55,7 +55,7 @@ camada_sitio_arqueologico = None
 if not camada_icmbio_existente:
     # Se a camada ICMBio não existe, adicione-a ao projeto a partir da conexão PostGIS
     uri_icmbio = QgsDataSourceUri()
-    uri_icmbio.setConnection("buclocal.agrotools.com.br", "6432", "buc", "joaquim_ornellas", "AJW3kVFNJtRWNR9")
+    uri_icmbio.setConnection("endereço_do_host", "Porta", "", "Login", "Senha") #substituir pelos valores convenientes
     uri_icmbio.setDataSource("public", "icmbio_amb_csa_embargo_a", "geom")
     camada_icmbio = QgsVectorLayer(uri_icmbio.uri(), nome_icmbio, 'postgres')
     if camada_icmbio.isValid():
@@ -70,7 +70,7 @@ else:
 if not camada_ibama_existente:
     # Se a camada ibama não existe, adicione-a ao projeto a partir da conexão PostGIS
     uri_ibama = QgsDataSourceUri()
-    uri_ibama.setConnection("buclocal.agrotools.com.br", "6432", "buc", "joaquim_ornellas", "AJW3kVFNJtRWNR9")
+    uri_ibama.setConnection("endereço_do_host", "Porta", "", "Login", "Senha") #substituir pelos valores convenientes
     uri_ibama.setDataSource("public", "ibama_amb_csa_area_embagada_a", "geom")
     camada_ibama = QgsVectorLayer(uri_ibama.uri(), nome_ibama, 'postgres')
     if camada_ibama.isValid():
@@ -85,7 +85,7 @@ else:
 if not camada_assentamento_existente:
     # Se a camada assentamento não existe, adicione-a ao projeto a partir da conexão PostGIS
     uri_assentamento = QgsDataSourceUri()
-    uri_assentamento.setConnection("buclocal.agrotools.com.br", "6432", "buc", "joaquim_ornellas", "AJW3kVFNJtRWNR9")
+    uri_assentamento.setConnection("endereço_do_host", "Porta", "", "Login", "Senha") #substituir pelos valores convenientes
     uri_assentamento.setDataSource("public", "lim_assentamentos_a", "geom")
     camada_assentamento = QgsVectorLayer(uri_assentamento.uri(), nome_assentamento, 'postgres')
     if camada_assentamento.isValid():
@@ -100,7 +100,7 @@ else:
 if not camada_indigena_existente:
     # Se a camada indigena não existe, adicione-a ao projeto a partir da conexão PostGIS
     uri_indigena = QgsDataSourceUri()
-    uri_indigena.setConnection("buclocal.agrotools.com.br", "6432", "buc", "joaquim_ornellas", "AJW3kVFNJtRWNR9")
+    uri_indigena.setConnection("endereço_do_host", "Porta", "", "Login", "Senha") #substituir pelos valores convenientes
     uri_indigena.setDataSource("public", "funai_amb_csa_terra_indigena_a", "geom")
     camada_indigena = QgsVectorLayer(uri_indigena.uri(), nome_indigena, 'postgres')
     if camada_indigena.isValid():
@@ -115,7 +115,7 @@ else:
 if not camada_sitio_arqueologico_existente:
     # Se a camada sitio_arqueologico não existe, adicione-a ao projeto a partir da conexão PostGIS
     uri_sitio_arqueologico = QgsDataSourceUri()
-    uri_sitio_arqueologico.setConnection("buclocal.agrotools.com.br", "6432", "buc", "joaquim_ornellas", "AJW3kVFNJtRWNR9")
+    uri_sitio_arqueologico.setConnection("endereço_do_host", "Porta", "", "Login", "Senha") #substituir pelos valores convenientes
     uri_sitio_arqueologico.setDataSource("public", "br_iphan_csa_pontos_sitios_georreferenciados_20211227_p", "geom")
     camada_sitio_arqueologico = QgsVectorLayer(uri_sitio_arqueologico.uri(), nome_sitio_arqueologico, 'postgres')
     if camada_sitio_arqueologico.isValid():
