@@ -1,4 +1,4 @@
-# Script_Socioambiental_BBA
+# Script_Socioambiental
 
 Problema: Acesso remoto a uma única maquina com programa de Feature Manipulation Engine (FME) acaba que impede o fluxo de trabalho, acumulando varias analises sócioambientais para um único analista
 
